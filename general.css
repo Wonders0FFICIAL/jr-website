@@ -1,0 +1,215 @@
+.body {
+  font-family: consolas, monospace, sans-serif, Arial;
+  background-color: #1f1f1f;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  transition: .4s;
+}
+
+.wrapper {
+  background-color: #333333;
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-end; 
+  height: 21px;
+  padding: 30px;
+  transition: .4s;
+}
+.under-wrapper {
+  height: 400px;
+  width: 100%;
+}
+.img 
+{
+  height: 40px;
+  width:  40px;
+}
+.email 
+{
+  background-color: #333333;
+  box-shadow: none;
+  border-width: 2px;
+  border-color: whitesmoke;
+  height: 50px;
+  width: 300px;
+  outline: none;
+  color: whitesmoke;
+  transition: .2s;
+  padding-left: 10px;
+  font-size: large;
+  font-family: consolas, monospace;
+  border-radius: 10px;
+}
+.email:hover
+{
+  background-color: #333333;
+  box-shadow: none;
+  border-width: 2px;
+  border-color: whitesmoke;
+  height: 60px;
+  width: 310px;
+  outline: none;
+  color: whitesmoke;
+  transition: .4s;
+  font-size: large;
+  font-family: consolas, monospace;
+}
+.text-head
+{
+  transition: .4s;
+  color: white;
+}
+.password-see
+{
+  height: 24px;
+  width:  24px;
+  border: none;
+  transition: .4s;
+  background-color: #fe6e04;
+  padding: 1px;
+}
+.password-text
+{
+  color: white;
+  margin-left: 12px;
+  transition: .4s;
+}
+.show-password-text
+{
+  display: inline-block; 
+  vertical-align: middle; 
+  margin-left: 5px;
+  bottom: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button-holder
+{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-top: 20px;
+}
+.button-text-holder
+{
+  margin-right: 10px;
+}
+#next-b
+{
+  margin-top: 50px;
+  height: 40px;
+  width:  70px;
+  background-color: #808080;
+  font-family: consolas;
+  border: none;                
+  border-radius: 6px;
+  font-size: 18px;
+  transition: .9s;
+  color: lightgray;
+}
+.warning
+{
+  background-color: #ff05058f;
+  height: 20.5px;
+  display: none;
+  width: 230px;
+  border-width: 2px;
+  border-color: #d30000;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 1px;
+  color: #fff700
+}
+.padder-tenpx
+{
+  padding-bottom: 10px;
+}
+.img-tick
+{
+  height: 23px;
+  width:  23px;
+}
+.dark-mode-off {
+  height: 20px;
+  width:  20px;
+  left: 0;
+  margin-right: 10px;
+}
+.light-mode-off {
+  height: 20px;
+  width:  20px;
+  right: 0;
+  margin-left: 10px;
+}
+.dark-mode-on {
+  height: 20px;
+  width:  20px;
+  left: 0;
+}
+
+.light-mode-on {
+  height: 20px;
+  width:  20px;
+  right: 0;
+}
+.text-place-holder
+{
+  padding: 16px;
+}
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  bottom: 5%;
+}
+
+.toggle-switch input {
+  opacity: 3;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .7s;
+  border-radius: 20px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px; 
+  width: 16px; 
+  left: 2px;
+  bottom: 2px; 
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: #2196F3;
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(20px); 
+}
+
+.toggle-slider.round {
+  border-radius: 20px; 
+}
+.cont 
+{
+  height: 100%;
+  width: 100%;
+}

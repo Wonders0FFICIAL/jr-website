@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="general.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="JR. (4).webp">
+    </head>
+    <body class="body" id="background">
+        <div class="cont">
+            <div class="wrapper" id="nav">
+                <img src="moon2.webp" class="dark-mode-off" id="imgMoon"> 
+                <label class="toggle-switch">
+                    <input type="checkbox" onchange="changeBackground(this)">
+                    <span class="toggle-slider round" id="toggle-sphere"></span>                 
+                </label> 
+                <img src="sun.webp" class="light-mode-off" id="imgSun">
+            </div>
+            <div class="under-wrapper" id="under-wrap">
+                <center>
+                    <div>
+                        <div class="text-place-holder">
+                            <font size="5">
+                                <p class="text-head" id="texth">Sign Up</p>
+                            </font>
+                        </div>
+                        <div class="padder-tenpx">
+                            <input class="email" id="email" type="email" autocomplete="off" placeholder="Email" >
+                        </div>
+                        <div class="padder-tenpx">
+                            <input class="email" id="password" type="password" autocomplete="off" placeholder="Password" oncopy="disableCopy(event)">
+                        </div>
+                        <div class="padder-tenpx">
+                            <input class="email" id="conf-password" type="password" autocomplete="off" placeholder="Confirm Password" oncopy="disableCopy(event)">
+                        </div>
+                        <div class="padder-tenpx">
+                            <input class="email" id="username" type="text" autocomplete="off" placeholder="User name">
+                        </div>
+                        <div class="padder-tenpx">
+                            <input class="email" id="displayname" type="text" autocomplete="off" placeholder="Display name">
+                        </div>
+                            <div class="warning" id="warning">
+                                Passwords do not match
+                            </div>
+                        <div class="button-holder" id="tker">
+                            <button class="password-see" onclick="ticker()">
+                                <img src="blankjr.webp" class="img-tick" id="img-tickd">
+                            </button>
+                            <div class="password-text" id="pass-text">
+                                <font size="4">
+                                    Show password
+                                </font>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="next-b" disabled onclick="test()">Next</button>
+                        </div>
+                    </div>
+                </center>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
