@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
     <link rel="icon" href="/assets/images/Favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=PT+Sans:wght@400;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="/styles/background.css" />
     <link rel="stylesheet" href="/styles/blog.css" />
-    <style>
-      @media (min-width: 769px) { .hamburger { display: none; } }
-    </style>
 </head>
 <body>
     <div class="stars" id="stars"><div class="orb-mid"></div></div>
@@ -28,151 +25,166 @@
                     <a href="/community">Community</a>
                 </div>
             </div>
-            <div class="signup-hamburger">
+            <div class="signup-wrap">
                 <a href="/signup" style="text-decoration: none"><button class="signup-btn">Sign Up</button></a>
-                <div class="hamburger"><div></div><div></div><div></div></div>
             </div>
         </nav>
+
         <section class="hero-section">
-            <h1>JR. Blog</h1>
-            <p>Discover insights, updates, and innovations from the JR. ecosystem. Stay ahead with the latest in technology, development, and community highlights.</p>
-            <div class="search-bar">
-                <input type="text" placeholder="Search articles, topics, or tags...">
-                <button><i class="fas fa-search"></i></button>
+            <div class="hero-copy">
+                <h1>Technology, products,<br><em>and what we're building.</em></h1>
+                <p>Product updates, engineering decisions, and news from across the JR. ecosystem — Juno, Avery, Moka, Lapis, and Forge.</p>
             </div>
-        </section>
-        <div class="category-filter">
-            <button class="category-btn active">All</button>
-            <button class="category-btn">Language</button>
-            <button class="category-btn">AI</button>
-            <button class="category-btn">Browser</button>
-            <button class="category-btn">Community</button>
-            <button class="category-btn">Cloud</button>
-            <button class="category-btn">Tutorials</button>
-        </div>
-        <section class="featured-section">
-            <h2 class="section-title">Featured Articles</h2>
-            <div class="featured-grid">
-                <article class="featured-main">
-                    <h2>The Future of JR. Technologies</h2>
-                    <p>Discover our comprehensive roadmap for 2025, featuring groundbreaking innovations in AI, cloud computing, and developer tools that will reshape how you build and deploy applications.</p>
-                    <div class="tags">
-                        <span class="tag">Featured</span>
-                        <span class="tag">Roadmap</span>
-                        <span class="tag">Vision</span>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="read-more">Read Full Article</a>
-                        <div class="card-meta">
-                            <span class="post-date">February 28, 2025</span>
-                            <span class="author">by Ryan Rakesh</span>
-                        </div>
-                    </div>
-                </article>
-                <div class="featured-sidebar">
-                    <article class="sidebar-post">
-                        <h3>JR. Lang v1.2 Released</h3>
-                        <p>Enhanced performance and new syntax features</p>
-                        <div class="card-footer">
-                            <a href="#" class="read-more">Read More</a>
-                            <div class="card-meta">
-                                <span class="post-date">April 12, 2025</span>
-                                <span class="author">by Tim Allen</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="sidebar-post">
-                        <h3>AI Assistant Updates</h3>
-                        <p>Voice control and improved memory capabilities</p>
-                        <div class="card-footer">
-                            <a href="#" class="read-more">Read More</a>
-                            <div class="card-meta">
-                                <span class="post-date">April 8, 2025</span>
-                                <span class="author">by Joshua Joseph</span>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="sidebar-post">
-                        <h3>Cloud Services Launch</h3>
-                        <p>Seamless integration with all JR. products</p>
-                        <div class="card-footer">
-                            <a href="#" class="read-more">Read More</a>
-                            <div class="card-meta">
-                                <span class="post-date">March 7, 2025</span>
-                                <span class="author">by Faheem Ayath</span>
-                            </div>
-                        </div>
-                    </article>
+            <div class="search-bar">
+                <div class="search-field">
+                    <i class="fas fa-search"></i>
+                    <input id="q" type="text" placeholder="Search articles, topics...">
+                    <kbd>/</kbd>
                 </div>
             </div>
         </section>
-        <section class="recent-section">
-            <h2 class="section-title">Recent Articles</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <h3>How We Built JR. Browse</h3>
-                    <p>From scratch to fast, secure, and customizable — here's the behind-the-scenes story of JR.'s browser journey and the challenges we overcame.</p>
-                    <div class="tags"><span class="tag">Browser</span><span class="tag">Dev Story</span></div>
-                    <div class="card-footer">
-                        <a href="#" class="read-more">Read More</a>
-                        <div class="card-meta"><span class="post-date">March 30, 2025</span><span class="author">by Alex Chen</span></div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <h3>Community Spotlight: Amazing JR. Lang Projects</h3>
-                    <p>We're featuring some of the coolest tools and applications built by our incredible community using JR. Lang. Get inspired!</p>
-                    <div class="tags"><span class="tag">Community</span><span class="tag">Showcase</span></div>
-                    <div class="card-footer">
-                        <a href="#" class="read-more">Read More</a>
-                        <div class="card-meta"><span class="post-date">March 27, 2025</span><span class="author">by Sarah Mitchell</span></div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <h3>JR. Lang Performance Optimization</h3>
-                    <p>With better performance, smarter tooling, and a cleaner syntax, see what makes JR. Lang the developer-favorite it's becoming.</p>
-                    <div class="tags"><span class="tag">Language</span><span class="tag">Performance</span></div>
-                    <div class="card-footer">
-                        <a href="#" class="read-more">Read More</a>
-                        <div class="card-meta"><span class="post-date">March 22, 2025</span><span class="author">by David Kim</span></div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <h3>Setting Up Your JR. Development Environment</h3>
-                    <p>A comprehensive guide to configuring your development environment for optimal JR. workflow and productivity.</p>
-                    <div class="tags"><span class="tag">Tutorial</span><span class="tag">Dev Tools</span></div>
-                    <div class="card-footer">
-                        <a href="#" class="read-more">Read More</a>
-                        <div class="card-meta"><span class="post-date">March 15, 2025</span><span class="author">by Emma Rodriguez</span></div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <h3>Advanced AI Integration Techniques</h3>
-                    <p>Learn how to leverage JR. AI's latest capabilities in your applications with practical examples and best practices.</p>
-                    <div class="tags"><span class="tag">AI</span><span class="tag">Integration</span></div>
-                    <div class="card-footer">
-                        <a href="#" class="read-more">Read More</a>
-                        <div class="card-meta"><span class="post-date">March 10, 2025</span><span class="author">by Marcus Johnson</span></div>
-                    </div>
-                </article>
-                <article class="blog-card">
-                    <h3>Security Best Practices for JR. Applications</h3>
-                    <p>Essential security guidelines and implementation strategies to keep your JR. applications safe and secure.</p>
-                    <div class="tags"><span class="tag">Security</span><span class="tag">Best Practices</span></div>
-                    <div class="card-footer">
-                        <a href="#" class="read-more">Read More</a>
-                        <div class="card-meta"><span class="post-date">March 5, 2025</span><span class="author">by Lisa Wang</span></div>
-                    </div>
-                </article>
+
+        <section class="filters">
+            <div class="filter-group" id="filterGroup">
+                <button class="category-btn active" data-f="All">All</button>
+                <button class="category-btn" data-f="IDE">IDE</button>
+                <button class="category-btn" data-f="Language">Language</button>
+                <button class="category-btn" data-f="AI">AI</button>
+                <button class="category-btn" data-f="Browser">Browser</button>
+                <button class="category-btn" data-f="Cloud">Cloud</button>
+                <button class="category-btn" data-f="Community">Community</button>
             </div>
+            <small class="result-count" id="count">7 articles</small>
         </section>
-        <div class="pagination">
-            <button>← Previous</button>
-            <button class="active">1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>Next →</button>
-        </div>
+
+        <section class="featured-section">
+            <article class="featured-card">
+                <div class="featured-art">
+                    <span class="art-label">FEATURED</span>
+                    <div class="orbit-visual" aria-hidden="true">
+                        <div class="orbit-ring r1"></div>
+                        <div class="orbit-ring r2"></div>
+                        <div class="orbit-center">JR<span style="font-size:12px">.</span></div>
+                        <div class="orbit-node n1"><img src="/assets/images/juno-logo.png" alt="" /></div>
+                        <div class="orbit-node n2"><img src="/assets/images/avery-logo.png" alt="" /></div>
+                        <div class="orbit-node n3"><img src="/assets/images/moka-logo.png" alt="" /></div>
+                        <div class="orbit-node n4"><img src="/assets/images/lapis-logo.png" alt="" /></div>
+                        <div class="orbit-node n5"><img src="/assets/images/forge-logo.png" alt="" /></div>
+                    </div>
+                </div>
+                <div class="featured-copy">
+                    <div class="post-meta"><span class="cat">Product</span><span class="featured-date">• Sep 12, 2026</span></div>
+                    <h2>Where JR. is going next</h2>
+                    <p>A look at the products we're building, the systems behind them, and the ideas shaping the next stage of the JR. ecosystem — from Juno's next release to what's coming for Avery.</p>
+                    <div class="author-line">JR. Team<span>Company update</span></div>
+                    <a class="read-btn" href="#">Read article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </section>
+
+        <section class="recent-section">
+            <div class="section-head">
+                <div>
+                    <div class="eyebrow">Latest</div>
+                    <h2>From our teams</h2>
+                </div>
+            </div>
+
+            <div class="blog-grid" id="grid">
+                <a href="#" class="blog-card" style="--accent:#00E0A4;--thumb-bg:rgba(0,224,164,0.12)" data-c="Language" data-t="Juno reaches its next milestone" data-x="typed generics incremental compile concurrency primitives">
+                    <div class="card-thumb"><img src="/assets/images/juno-logo.png" alt="Juno" /><small>LANGUAGE</small></div>
+                    <div class="card-body">
+                        <div class="post-meta"><span class="cat">Language</span> · Sep 08, 2026</div>
+                        <h3>Juno reaches its next milestone</h3>
+                        <p>v0.4.1 lands typed generics, faster incremental compiles, and the first pass at native concurrency primitives.</p>
+                        <div class="card-footer">
+                            <span class="author">Juno team</span>
+                            <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card" style="--accent:#F472B6;--thumb-bg:rgba(244,114,182,0.12)" data-c="AI" data-t="Meet Avery, reimagined" data-x="long-term memory code context assistant">
+                    <div class="card-thumb"><img src="/assets/images/avery-logo.png" alt="Avery" /><small>AI</small></div>
+                    <div class="card-body">
+                        <div class="post-meta"><span class="cat">AI</span> · Sep 02, 2026</div>
+                        <h3>Meet Avery, reimagined</h3>
+                        <p>Our AI assistant gets long-term memory, deeper code context, and a calmer, more direct way of getting things done.</p>
+                        <div class="card-footer">
+                            <span class="author">Avery team</span>
+                            <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card" style="--accent:#C8A27A;--thumb-bg:rgba(200,162,122,0.14)" data-c="Browser" data-t="Building Moka: privacy without the trade-offs" data-x="tracker blocking telemetry privacy">
+                    <div class="card-thumb"><img src="/assets/images/moka-logo.png" alt="Moka" /><small>BROWSER</small></div>
+                    <div class="card-body">
+                        <div class="post-meta"><span class="cat">Browser</span> · Aug 24, 2026</div>
+                        <h3>Building Moka: privacy without the trade-offs</h3>
+                        <p>How we built tracker blocking that doesn't break the web, and why Moka ships without a single telemetry call.</p>
+                        <div class="card-footer">
+                            <span class="author">Moka team</span>
+                            <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card" style="--accent:#60a5fa;--thumb-bg:rgba(96,165,250,0.12)" data-c="Cloud" data-t="Lapis goes alpha" data-x="vps root access private networking snapshots">
+                    <div class="card-thumb"><img src="/assets/images/lapis-logo.png" alt="Lapis" /><small>CLOUD</small></div>
+                    <div class="card-body">
+                        <div class="post-meta"><span class="cat">Cloud</span> · Aug 16, 2026</div>
+                        <h3>Lapis goes alpha: your server, in seconds</h3>
+                        <p>Root-access virtual machines, private networking, and snapshots — provisioned faster than you can finish your coffee.</p>
+                        <div class="card-footer">
+                            <span class="author">Lapis team</span>
+                            <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card" style="--accent:#F97316;--thumb-bg:rgba(249,115,22,0.12)" data-c="IDE" data-t="Forge learns to refactor across files" data-x="ide copilot project-wide context rename">
+                    <div class="card-thumb"><img src="/assets/images/forge-logo.png" alt="Forge" /><small>IDE</small></div>
+                    <div class="card-body">
+                        <div class="post-meta"><span class="cat">IDE</span> · Aug 09, 2026</div>
+                        <h3>Forge learns to refactor across files</h3>
+                        <p>Project-wide context means Forge's copilot can now rename, restructure, and clean up code across your whole repo.</p>
+                        <div class="card-footer">
+                            <span class="author">Forge team</span>
+                            <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="blog-card" style="--accent:#8b73ff;--thumb-bg:rgba(139,115,255,0.14)" data-c="Community" data-t="Building JR. in public" data-x="roadmap bugs community">
+                    <div class="card-thumb"><img src="/assets/images/JR. Logo.png" alt="JR." style="width:50px;height:50px" /><small>COMMUNITY</small></div>
+                    <div class="card-body">
+                        <div class="post-meta"><span class="cat">Community</span> · Jul 29, 2026</div>
+                        <h3>Building JR. in public</h3>
+                        <p>What we're learning from sharing our roadmap, our bugs, and our wins with the community as we build.</p>
+                        <div class="card-footer">
+                            <span class="author">JR. team</span>
+                            <span class="read-more">Read more <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="empty-state" id="empty"><i class="fas fa-magnifying-glass"></i>No articles found. Try a different search or category.</div>
+        </section>
+
+        <section class="subscribe">
+            <div>
+                <div class="eyebrow">Stay in the loop</div>
+                <h2>Get new JR. posts<br>when they ship.</h2>
+            </div>
+            <form class="subscribe-form" onsubmit="return false;">
+                <input type="email" placeholder="you@example.com" required>
+                <button type="submit">Subscribe <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </section>
     </div>
+
     <footer>
         <div class="footer-content">
             <div class="footer-section">

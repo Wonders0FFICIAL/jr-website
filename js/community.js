@@ -1,11 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
     const communityBtns = document.querySelectorAll('.community-btn');
     communityBtns.forEach(btn => {
         const buttonText = btn.textContent;

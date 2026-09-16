@@ -163,10 +163,9 @@ body {
     font-weight: 700;
 }
 
-.signup-hamburger {
+.signup-wrap {
     display: flex;
     align-items: center;
-    gap: 30px;
 }
 
 .signup-btn {
@@ -869,10 +868,6 @@ footer {
     }
     .nav-links a {
         font-size: 14px;
-    }
-    .signup-hamburger {
-        flex-direction: column;
-        gap: 10px;
     }
     .footer-content {
         flex-direction: column;

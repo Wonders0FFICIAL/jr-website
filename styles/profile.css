@@ -115,10 +115,9 @@ body::after {
 .nav-links a:hover { color: #543fce; }
 .nav-links a.active { color: #543fce; font-weight: bold; }
 
-.signup-hamburger {
+.signup-wrap {
     display: flex;
     align-items: center;
-    gap: 30px;
 }
 
 .signup-btn {

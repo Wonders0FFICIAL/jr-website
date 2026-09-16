@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.hamburger');
-  const navLinks = document.querySelector('.nav-links');
   const profileImage = document.getElementById('profile-image');
   const uploadPictureBtn = document.getElementById('upload-picture-btn');
   const profileImageInput = document.getElementById('profile-image-input');
@@ -331,8 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function attachEventListeners() {
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
-
     profileImage.addEventListener('click', () => {
       const orig = sessionStorage.getItem(KEY_ORIGINAL);
       const preview = sessionStorage.getItem(KEY_CROPPED);

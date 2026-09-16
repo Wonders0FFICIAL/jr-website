@@ -94,10 +94,9 @@ body.light-theme .nav-links a.active {
     color: #5638E5;
 }
 
-.signup-hamburger {
+.signup-wrap {
     display: flex;
     align-items: center;
-    gap: 30px;
 }
 
 .signup-btn {
@@ -130,26 +129,6 @@ body.light-theme .signup-btn {
 
 body.light-theme .signup-btn:hover {
     background-color: #4325c2;
-}
-
-.hamburger {
-    width: 25px;
-    height: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.hamburger div {
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: background-color 0.3s ease;
-}
-
-body.light-theme .hamburger div {
-    background-color: #1a1a2e;
 }
 
 .main-content {
@@ -560,24 +539,6 @@ body.light-theme .copyright {
 
     .nav-links {
         display: none;
-    }
-
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #0A0D18;
-        padding: 20px;
-        z-index: 100;
-        border-bottom: 1px solid #5638E5;
-    }
-
-    body.light-theme .nav-links.active {
-        background-color: rgba(255, 255, 255, 0.95);
-        border-bottom-color: #7c5cef;
     }
 
     .card {

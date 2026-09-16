@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const pills     = document.querySelectorAll('.selector-pill');
   const indicator = document.getElementById('selectorIndicator');
   const heroGrad  = document.getElementById('heroGradientText');
-  const hamburger = document.getElementById('hamburger');
-  const navLinks  = document.getElementById('nav-links');
 
   const STAR_COUNT      = 130;
   const CONNECTION_DIST = 145;
@@ -241,15 +239,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialPill = document.querySelector('.selector-pill.active');
   if (initialPill) positionIndicator(initialPill);
   updatePillLogos(currentProduct);
-
-  if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
-    hamburger.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); navLinks.classList.toggle('active'); }
-    });
-    document.addEventListener('click', e => {
-      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) navLinks.classList.remove('active');
-    });
-  }
 
 });

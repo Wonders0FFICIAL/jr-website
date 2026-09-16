@@ -97,10 +97,9 @@ body.light-theme .nav-links a:hover {
     color: #5638E5;
 }
 
-.signup-hamburger {
+.signup-wrap {
     display: flex;
     align-items: center;
-    gap: 30px;
 }
 
 .signup-btn {
@@ -129,26 +128,6 @@ body.light-theme .signup-btn {
 
 body.light-theme .signup-btn:hover {
     background-color: #4325c2;
-}
-
-.hamburger {
-    width: 25px;
-    height: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-}
-
-.hamburger div {
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: background-color 0.3s ease;
-}
-
-body.light-theme .hamburger div {
-    background-color: #1a1a2e;
 }
 
 .main-content {

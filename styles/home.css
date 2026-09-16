@@ -95,10 +95,9 @@ body.light-theme .nav-links a.active {
     color: #5638E5;
 }
 
-.signup-hamburger {
+.signup-wrap {
     display: flex;
     align-items: center;
-    gap: 30px;
 }
 
 .signup-btn {
@@ -1361,11 +1360,6 @@ body.light-theme .copyright {
 
     .nav-links a {
         font-size: 14px;
-    }
-
-    .signup-hamburger {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .section {

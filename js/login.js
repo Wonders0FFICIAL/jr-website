@@ -1,11 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
     const loginButton = document.getElementById('login-button');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');

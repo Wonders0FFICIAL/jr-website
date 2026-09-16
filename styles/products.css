@@ -72,7 +72,7 @@ body {
 .nav-links a { text-decoration: none; color: white; transition: color 0.2s; }
 .nav-links a:hover { color: var(--accent); }
 .nav-links a.active { color: var(--accent); font-weight: bold; }
-.signup-hamburger { display: flex; align-items: center; gap: 30px; }
+.signup-wrap { display: flex; align-items: center; }
 
 .signup-btn {
   background: #0E0634;
@@ -87,16 +87,6 @@ body {
   transition: background 0.25s;
 }
 .signup-btn:hover { background: var(--purple); }
-
-.hamburger { width: 25px; height: 18px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; }
-.hamburger div { height: 3px; background: white; border-radius: 2px; }
-
-.nav-links.active {
-  display: flex; flex-direction: column;
-  position: absolute; top: 60px; left: 0; right: 0;
-  background: #0A0D18; padding: 20px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2); z-index: 100;
-}
 
 .hero {
   text-align: center;
@@ -586,7 +576,6 @@ body[data-active="juno"] .stars .orb-mid { background: radial-gradient(ellipse a
 }
 
 @media (min-width: 769px) {
-  .hamburger { display: none; }
 }
 
 @media (max-width: 980px) {
