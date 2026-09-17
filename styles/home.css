@@ -276,6 +276,30 @@ body.light-theme .section-heading > p {
     left: 0px;
 }
 
+@media (max-width: 1600px) {
+    .hero-copy {
+        transform: none;
+    }
+
+    .featured-section .section-heading > div {
+        left: 0;
+    }
+
+    .featured-section .section-heading > .text-link {
+        top: 0;
+        left: 0;
+    }
+
+    #what-we-build .section-heading {
+        left: 0;
+    }
+
+    #what-we-build .section-heading > p {
+        left: 0;
+        transform: none;
+    }
+}
+
 @media (max-width: 900px) {
     #what-we-build .section-heading h2 {
         white-space: normal;
