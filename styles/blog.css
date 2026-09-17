@@ -405,7 +405,6 @@ body.light-theme .result-count {
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
-    animation: floatNode 6s ease-in-out infinite;
 }
 
 .orbit-node img {
@@ -414,26 +413,11 @@ body.light-theme .result-count {
     object-fit: contain;
 }
 
-.orbit-node.n1 { top: 10%; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
-.orbit-node.n2 { top: 34%; right: 6%; animation-delay: .4s; }
-.orbit-node.n3 { bottom: 12%; right: 20%; animation-delay: .8s; }
-.orbit-node.n4 { bottom: 12%; left: 18%; animation-delay: 1.2s; }
-.orbit-node.n5 { top: 34%; left: 6%; animation-delay: 1.6s; }
-
-@keyframes floatNode {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-.orbit-node.n1 { animation-name: floatNodeCentered; }
-@keyframes floatNodeCentered {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(-6px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .orbit-node { animation: none; }
-}
+.orbit-node.n1 { top: 50%; left: 50%; margin: -117px 0 0 -22px; }
+.orbit-node.n2 { top: 50%; left: 50%; margin: -124.5px 0 0 80.5px; } 
+.orbit-node.n3 { top: 50%; left: 50%; margin: 80.5px 0 0 80.5px; }   
+.orbit-node.n4 { top: 50%; left: 50%; margin: 80.5px 0 0 -124.5px; } 
+.orbit-node.n5 { top: 50%; left: 50%; margin: -124.5px 0 0 -124.5px; }
 
 .featured-copy {
     min-height: 400px;
