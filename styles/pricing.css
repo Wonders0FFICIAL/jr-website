@@ -826,6 +826,12 @@ footer {
     color: #888;
 }
 
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
 @media (max-width: 900px) {
     .plans-four {
         grid-template-columns: repeat(2, 1fr);
@@ -862,12 +868,6 @@ footer {
     }
     .navbar {
         padding: 10px 20px;
-    }
-    .nav-links {
-        gap: 10px;
-    }
-    .nav-links a {
-        font-size: 14px;
     }
     .footer-content {
         flex-direction: column;

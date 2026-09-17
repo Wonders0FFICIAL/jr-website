@@ -188,6 +188,8 @@ body.light-theme .signup-btn:hover {
   border: 2px solid #5638E5;
   padding: 40px;
   width: 400px;
+  max-width: 100%;
+  box-sizing: border-box;
   position: relative;
   z-index: 10;
   transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -753,7 +755,7 @@ body.light-theme .copyright {
 
   .card {
     padding: 25px;
-    width: 90%;
+    width: 100%;
   }
 
   .footer-content {

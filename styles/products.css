@@ -583,6 +583,10 @@ body[data-active="juno"] .stars .orb-mid { background: radial-gradient(ellipse a
   .panel-left { position: static; }
 }
 
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+}
+
 @media (max-width: 640px) {
   .hero { padding: 60px 16px 48px; }
   .panel-features-grid { grid-template-columns: 1fr; }

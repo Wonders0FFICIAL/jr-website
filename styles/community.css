@@ -534,23 +534,7 @@ body.light-theme .copyright {
     }
 
     .nav-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background-color: #0A0D18;
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-        border-bottom: 1px solid #5638E5;
-        transform: translateY(-150%);
-        transition: transform 0.3s ease;
-        z-index: 10;
-    }
-
-    body.light-theme .nav-links {
-        background-color: rgba(255, 255, 255, 0.95);
-        border-bottom-color: #7c5cef;
+        display: none;
     }
 
     .signup-wrap {
