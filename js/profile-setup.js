@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     showLoading();
-    const currentUser = JSON.parse(sessionStorage.getItem('currentUser')) || {};
+    const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
     currentUser.username = usernameInput.value.trim();
     currentUser.displayName = displayNameInput.value.trim();
     currentUser.profileSetup = true;
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
       sessionStorage.setItem('profileImage', preview);
     }
 
-    sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
 
     window.dispatchEvent(new StorageEvent('storage', {
       key: 'currentUser',

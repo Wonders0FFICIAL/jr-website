@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 sessions: []
             };
 
-            sessionStorage.setItem('currentUser', JSON.stringify(userData));
+            localStorage.setItem('currentUser', JSON.stringify(userData));
 
             window.location.href = '/profile-setup';
         } else {

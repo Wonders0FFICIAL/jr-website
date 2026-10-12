@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isEmailValid && isPasswordValid) {
             const userId = 'user_' + Date.now();
-            sessionStorage.setItem('currentUser', JSON.stringify({
+            localStorage.setItem('currentUser', JSON.stringify({
                 id: userId,
                 email: emailInput.value,
             }));
