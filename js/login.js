@@ -1,119 +1,124 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const loginButton = document.getElementById('login-button');
+    const form = document.getElementById('login-form');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const togglePasswordBtn = document.getElementById('toggle-password');
     const passwordIcon = togglePasswordBtn.querySelector('i');
-    
     const emailError = document.getElementById('email-error');
     const passwordError = document.getElementById('password-error');
     const forgotPasswordBtn = document.getElementById('forgot-password-btn');
-    const googleBtn = document.querySelector('.google-btn');
-    const githubBtn = document.querySelector('.github-btn');
-    const appleBtn = document.querySelector('.apple-btn');
     const signupBtn = document.getElementById('signup-btn');
+    const statusBox = document.getElementById('form-status');
 
-    togglePasswordBtn.addEventListener('click', () => {
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            passwordIcon.classList.replace('fa-eye', 'fa-eye-slash');
-        } else {
-            passwordInput.type = 'password';
-            passwordIcon.classList.replace('fa-eye-slash', 'fa-eye');
-        }
-    });
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-    emailInput.addEventListener('input', () => {
-        emailInput.value = emailInput.value.replace(/\s+/g, '');
-        validateEmail();
-    });
+    const STATUS_ICONS = {
+        info: 'fa-circle-info',
+        error: 'fa-circle-exclamation',
+        success: 'fa-circle-check',
+    };
+
+    function showStatus(message, type = 'info') {
+        statusBox.className = `form-status is-${type}`;
+        statusBox.replaceChildren();
+        const icon = document.createElement('i');
+        icon.className = `fa-solid ${STATUS_ICONS[type]}`;
+        icon.setAttribute('aria-hidden', 'true');
+        const text = document.createElement('span');
+        text.textContent = message;
+        statusBox.append(icon, text);
+        statusBox.hidden = false;
+    }
+
+    function clearStatus() {
+        statusBox.hidden = true;
+    }
+
+    function setFieldError(input, errorEl, message) {
+        errorEl.textContent = message;
+        input.classList.toggle('invalid', Boolean(message));
+        input.setAttribute('aria-invalid', message ? 'true' : 'false');
+    }
 
     function validateEmail() {
         const email = emailInput.value.trim();
-        const emailRegex = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$/;
-
         if (!email) {
-            emailError.textContent = 'Please enter a valid email address';
+            setFieldError(emailInput, emailError, 'Please enter your email address');
             return false;
         }
-        if (!emailRegex.test(email)) {
-            emailError.textContent = 'Invalid email format';
+        if (!EMAIL_RE.test(email)) {
+            setFieldError(emailInput, emailError, 'That email address doesn’t look right');
             return false;
         }
-        emailError.textContent = '';
+        setFieldError(emailInput, emailError, '');
         return true;
     }
+
+    function validatePassword() {
+        if (passwordInput.value.length < 1) {
+            setFieldError(passwordInput, passwordError, 'Please enter your password');
+            return false;
+        }
+        setFieldError(passwordInput, passwordError, '');
+        return true;
+    }
+
+    // Show/hide password
+    togglePasswordBtn.addEventListener('click', () => {
+        const reveal = passwordInput.type === 'password';
+        passwordInput.type = reveal ? 'text' : 'password';
+        passwordIcon.classList.toggle('fa-eye', !reveal);
+        passwordIcon.classList.toggle('fa-eye-slash', reveal);
+        togglePasswordBtn.setAttribute('aria-label', reveal ? 'Hide password' : 'Show password');
+    });
+
+    // Validate when leaving a field; once a field shows an error, re-check live so it clears as soon as it's fixed
+    emailInput.addEventListener('input', () => {
+        emailInput.value = emailInput.value.replace(/\s+/g, '');
+        if (emailInput.classList.contains('invalid')) validateEmail();
+    });
+    emailInput.addEventListener('blur', () => {
+        if (emailInput.value) validateEmail();
+    });
 
     passwordInput.addEventListener('input', () => {
         passwordInput.value = passwordInput.value.replace(/\s+/g, '');
-        validatePassword();
+        if (passwordInput.classList.contains('invalid')) validatePassword();
     });
 
-    function updateLayoutForErrors() {
-        const passwordError = document.getElementById('password-error');
-        const forgotPasswordDiv = document.querySelector('.forgot-password');
-        
-        setTimeout(() => {
-            if (passwordError.textContent.trim() !== '') {
-                forgotPasswordDiv.style.marginTop = '4px'; 
-            } else {
-                forgotPasswordDiv.style.marginTop = '8px'; 
-            }
-        }, 10);
-    }
-    
-    function validatePassword() {
-        const password = passwordInput.value;
-
-        if (password.length < 1) {
-            passwordError.textContent = 'Please enter your password';
-            updateLayoutForErrors();
-            return false;
-        }
-        passwordError.textContent = '';
-        updateLayoutForErrors();
-        return true;
-    }
-
-    loginButton.addEventListener('click', (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
+        clearStatus();
 
         const isEmailValid = validateEmail();
         const isPasswordValid = validatePassword();
 
-        if (isEmailValid && isPasswordValid) {
-            const userId = 'user_' + Date.now();
-            sessionStorage.setItem('currentUser', JSON.stringify({
-                id: userId,
-                email: emailInput.value,
-            }));
-            
-            window.location.href = '/profile-setup';
-        } else {
-            if (!isEmailValid) emailInput.focus();
-            else if (!isPasswordValid) passwordInput.focus();
-        }
+        if (!isEmailValid) return emailInput.focus();
+        if (!isPasswordValid) return passwordInput.focus();
+
+        localStorage.setItem('currentUser', JSON.stringify({
+            id: 'user_' + Date.now(),
+            email: emailInput.value,
+        }));
+
+        window.location.href = '/profile-setup';
     });
-    
+
     forgotPasswordBtn.addEventListener('click', () => {
-        alert('Password reset link will be sent to your email address.');
+        if (!validateEmail()) {
+            emailInput.focus();
+            return;
+        }
+        showStatus(`If an account exists for ${emailInput.value}, a password reset link will be sent.`, 'info');
     });
-    
-    googleBtn.addEventListener('click', () => {
-        alert('Google login is not available yet. Please use email and password.');
+
+    [['google-btn', 'Google'], ['github-btn', 'GitHub'], ['apple-btn', 'Apple']].forEach(([cls, name]) => {
+        document.querySelector(`.${cls}`).addEventListener('click', () => {
+            showStatus(`${name} login isn’t available yet. Please use your email and password.`, 'info');
+        });
     });
-    
-    githubBtn.addEventListener('click', () => {
-        alert('GitHub login is not available yet. Please use email and password.');
-    });
-    
-    appleBtn.addEventListener('click', () => {
-        alert('Apple login is not available yet. Please use email and password.');
-    });
-    
+
     signupBtn.addEventListener('click', () => {
         window.location.href = '/signup';
     });
-
-    updateLayoutForErrors();
 });
