@@ -20,8 +20,11 @@
     { "source": "/settings/security", "destination": "/pages/settings/security.html" },
     { "source": "/settings/developer", "destination": "/pages/settings/developer.html" },
     { "source": "/settings/activity", "destination": "/pages/settings/activity.html" }
-    {
+  ],
   "headers": [
-    { "source": "/(.*)", "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }] }
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    }
   ]
 }
